@@ -60,16 +60,12 @@ class Net:
         self.layer_sizes = layer_sizes
         self.layers = [Layer(self.layer_sizes[i]) for i in range(len(self.layer_sizes))]
         self.weighted_layers = []
-
-        self.setup()
-        
+        self.createWeightLayers()
+              
+              
     def setInputValues(self, arr):
         self.layers[0].setNodeValues_list(arr)
         
-    
-    def setup(self):
-        self.createWeightLayers()
-
     def createWeightLayers(self):
         self.weighted_layers = []
         for l in range(len(self.layers) - 1):
